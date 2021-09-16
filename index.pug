@@ -1,0 +1,98 @@
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="/styles/index.css")
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        //- div.cen
+        div.left_panel
+            div.logo(style=" background-image: url(/assets/icons/logo.png);")
+            div.separator
+            div.menu
+                .menu_option(style=" background: linear-gradient(270deg, #D6F0FF 0%, rgba(214, 240, 255, 0) 100%);")
+                    img.img(src="/assets/icons/home.png" style="filter: invert(100%)grayscale(-100);")
+                    div.activation(style="opacity: 1")
+                div.menu_option
+                    img.img(src="/assets/icons/list.png")
+                    div.activation(style="opacity: 0")
+                div.menu_option
+                    img.img(src="/assets/icons/stat.png")
+                    div.activation(style="opacity: 0")
+            div.optional_menu
+                div.bug_report
+                div.logout
+
+        div.centre
+            div.user
+                div.account
+                    img.image(src="/assets/icons/test_user.png")
+                    div.name Anton Gunger
+                    div.prof Designer UI/UX
+                div.search
+                    div.icon
+                    input(placeholder="Search...")
+            div.separator 
+            div.schedule
+                div.title
+                    div.text Schedule
+                    div.mode
+                div.work_space#workSlider
+                    div.starter
+                    div.ender
+
+                    //- div.day
+                    //-     div.title
+                    //-         div.dayValue 8
+                    //-         div.dayInfo
+                    //-             div.month September
+                    //-             div.dayWeek Wednesday
+                    //-         div.addNew + Add new
+                    //-     div.separator
+                    //-     div.task_space
+                    //-         div.task
+
+                    //- div.day#-1(style="background-color: #D6F0FF;") empty
+                    //- -for (var x = 0; x < 31; x++)
+                    //-     div.day(id=x)(style="background-color: #D6F0FF;")= x+1 + ' September'
+                    //- div.day#31 empty
+                    
+                    
+
+        div.right_menu
+            div.calendar#calendar
+                div.title
+                    div.desc Calendar
+                    div.month
+                        div.swiper <
+                        div.text september
+                        div.swiper >
+                div.week_info
+                    -var list = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+                    each item in list
+                        div.info= item
+                div.date_weeks#date_weeks
+                    //- -for (var x = 1; x < 7; x++)
+                    //-     div.row
+                    //-         -for (var y = 1; y < 8; y++)
+                    //-             if(y > 2)
+                    //-                 div.day= y*x-2
+                    //-             else 
+                    //-                 div.day
+            div.separator
+            div.notes
+                div.title 
+                    div.desc Notes
+                    div.addNote +
+                div.notes_scroll#notes
+                    //- div.starter
+                    //- -for (var x = 1; x < 8; x++)
+                    //-     div.note
+                    //-         div.title
+                    //-             div.date 6.09.2021
+                    //-             div.preferences
+                    //-         div.text Description of note 
+                div.ender
+        script(src='/scripts/index.js')
